@@ -244,6 +244,8 @@ print('The hottest month is ', month_max_temp, 'and the temperature is equal to 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
 ###### Analyse: The chart, as well as the calcul results, show that on average, the third month has the coldest minimum temperature on Mars, and the eighth month is the warmest. But it is always very cold there in human terms!
+<img src='temp.png' style ='width:700px;height:300px'/> 
+
 ```
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Identify the lowest and heighest pressure
@@ -273,6 +275,8 @@ print('Maximum pressure: ', max_pressure," Month associated", max_month.tolist()
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
 ###### Analyse: The chart, as well as the calcul results, show that the atmospheric pressure is, on average, lowest in the sixth month and highest in the ninth.
+<img src='pressure.png' style ='width:700px;height:300px'/> 
+
 ```
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Number of days in one year on Mars
@@ -308,6 +312,8 @@ print('The number of days in one year in Mars is ',nbr_j)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
 ###### Analyse: The distance from peak to peak is roughly 1425-750, or 675 days. A year on Mars appears to be about 675 days from the plot. The calcul results is equivalent to 687 earth days.
+<img src='nbr_j.png' style ='width:700px;height:300px'/> 
+
 
 ##### Step 6: Save the Data
 ```
