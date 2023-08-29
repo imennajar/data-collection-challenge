@@ -168,7 +168,9 @@ for r in rows:
         
     # Extract the values of cells and add them to the list_rows
     cell_values = [cell.get_text() for cell in cel]
-    list_rows.append(cell_values)
+    # Delete empty rows
+    if any(cell_values):
+        list_rows.append(cell_values)
 
 # Print the list of columns names and the content of each row
 print("Column Names:", list_column)
@@ -176,7 +178,6 @@ print("Data Rows:", list_rows)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Create a Pandas DataFrame by using the list of rows and a list of the column names
 df = pd.DataFrame(list_rows, columns=list_column)
-df=df.dropna()
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
 ##### Step 4: Prepare Data for Analysis
