@@ -168,7 +168,7 @@ for r in rows:
         
     # Extract the values of cells and add them to the list_rows
     cell_values = [cell.get_text() for cell in cel]
-    # Delete empty rows
+    # Add not empty rows to the list
     if any(cell_values):
         list_rows.append(cell_values)
 
