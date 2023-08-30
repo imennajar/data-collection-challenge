@@ -2,7 +2,7 @@
 
 In this project we will work on a full web-scraping and data analysis.  
 
-In this project we will use our skills to collect data, organize and store data, analyze data, and  visually communicate insights.
+In this project we will use our skills to collect, organize, store, and analyze data, as well as to visually communicate insights.
 
 We will work on two parts:
 
@@ -25,23 +25,23 @@ We will work on two parts:
 
 Part1:
 
-- Use automated browsing to visit the Mars news site: 'https://static.bc-edx.com/data/web/mars_news/index.html'.
+- Use automated browsing to visit the Mars news site: 'https://static.bc-edx.com/data/web/mars_news/index.html'
 
-- Create a Beautiful Soup object and use it to extract text elements from the website.
+- Create a Beautiful Soup object and use it to extract text elements from the website
 
-- Extract the titles and preview text of the news articles that you scraped. Store the scraping results in Python data structures.
+- Extract the titles and preview text of the news articles that you scraped. Store the scraping results in Python data structures
 
 Part2:
 
-- Use automated browsing to visit the Mars Temperature Data site: 'https://static.bc-edx.com/data/web/mars_facts/temperature.html'.
+- Use automated browsing to visit the Mars Temperature Data site: 'https://static.bc-edx.com/data/web/mars_facts/temperature.html'
   
-- Create a Beautiful Soup object and use it to scrape the data in the HTML table.
+- Create a Beautiful Soup object and use it to scrape the data in the HTML table
 
-- Assemble the scraped data into a Pandas DataFrame.
+- Assemble the scraped data into a Pandas DataFrame
 
-- Examine the data types that are currently associated with each column.
+- Examine the data types that are currently associated with each column
 
-- Analyze the dataset by using Pandas functions.
+- Analyze the dataset by using Pandas functions
 
 ## Program:
 
@@ -96,7 +96,7 @@ for elt in text_elements:
     title = elt.find('div', class_='content_title').text.strip()
     preview = elt.find('div', class_='article_teaser_body').text.strip()
     
-    # Save title and preview  in a dictionary
+    # Save title and preview in a dictionary
     dict_elt = {'title': title, 'preview': preview}
     
     # Add the dictionary to the list
@@ -172,7 +172,7 @@ for r in rows:
     if any(cell_values):
         list_rows.append(cell_values)
 
-# Print the list of columns names and the content of each row
+# Print the list of column names and the content of each row
 print("Column Names:", list_column)
 print("Data Rows:", list_rows)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -244,12 +244,12 @@ print('The hottest month is ', month_max_temp, 'and the temperature is equal to 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
-###### Analyse: The chart, as well as the calcul results, show that on average, the third month has the coldest minimum temperature on Mars, and the eighth month is the warmest. But it is always very cold there in human terms!
+###### Analysis: The chart, as well as the calculated results, show that on average, the third month has the coldest minimum temperature on Mars, and the eighth month is the warmest. But it is always very cold there in human terms!
 <img src='temp.png' style ='width:700px;height:300px'/> 
 
 ```
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Identify the lowest and heighest pressure
+# Identify the lowest and highest pressure
 
 # Create and sort the dataframe
 avg_pressure_df = pd.DataFrame(avg_pressure)
@@ -263,7 +263,7 @@ plt.ylabel('Atmospheric Pressure')
 plt.savefig('pressure.png')
 plt.show()
 
-# Look for the Minimum  and Maximum pressure with their months
+# Look for the Minimum and Maximum pressure with their months
 avg_pressure_df = avg_pressure.reset_index().rename(columns={'pressure': 'mean_pressure'})
 min_pressure = avg_pressure_df ['mean_pressure'].min()
 max_pressure = avg_pressure_df ['mean_pressure'].max()
@@ -275,20 +275,20 @@ print('Minimum pressure: ', min_pressure, ' Month associated: ', min_month.tolis
 print('Maximum pressure: ', max_pressure," Month associated", max_month.tolist())
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
-###### Analyse: The chart, as well as the calcul results, show that the atmospheric pressure is, on average, lowest in the sixth month and highest in the ninth.
+###### Analysis: The chart, as well as the calculated results, show that the atmospheric pressure is, on average, lowest in the sixth month and highest in the ninth.
 <img src='pressure.png' style ='width:700px;height:300px'/> 
 
 ```
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Number of days in one year on Mars
-# Plot to look for the distance between two peaks of the temperature
+# Plot to look for the distance between the two temperature peaks 
 df.plot(y = 'min_temp', legend=None)
 plt.xlabel('Number of Terrestrial Days')
 plt.ylabel('Minimum Temperature')
 plt.savefig('nbr_j.png')
 plt.show()
 
-# One year in Mars means when the ls (Solar Longitude) is the same between two dates
+# One year on Mars means when the ls (Solar Longitude) is the same between two dates
  
 # Save the first value from the column ls
 first_value = df['ls'].iloc[0]
@@ -312,7 +312,7 @@ print('The number of days in one year in Mars is ',nbr_j)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ```
-###### Analyse: The distance from peak to peak is roughly 1425-750, or 675 days. A year on Mars appears to be about 675 days from the plot. The calcul results is equivalent to 687 earth days.
+###### Analysis: The distance from peak to peak is roughly 1425-750, or 675 days. A year on Mars appears to be about 675 days from the plot. The calculated result is equivalent to 687 earth days.
 <img src='nbr_j.png' style ='width:700px;height:300px'/> 
 
 
